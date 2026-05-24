@@ -1,0 +1,511 @@
+@font-face {
+  font-family: "Space Grotesk";
+  src:
+    url('/fonts/space-grotesk.ttf')
+    format('truetype');
+  font-weight:
+    300 700;
+  font-style:
+    normal;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src:
+    url('/fonts/jetbrains-mono.ttf')
+    format('truetype');
+  font-weight:
+    100 800;
+  font-style:
+    normal;
+}
+/* ════════════════════════════════════════════
+   RAMON FERRARI — SLIDEV THEME
+════════════════════════════════════════════ */
+
+/* ════════════════════════════════════════════
+   DESIGN TOKENS — DARK MODE (DEFAULT)
+════════════════════════════════════════════ */
+:root {
+  /* BACKGROUND */
+  --rf-bg:
+    #0b0f14;
+  --rf-glow:
+    rgba(53,153,110,0.28);
+
+  /* SURFACES */
+  --rf-surface-primary:
+    rgba(255,255,255,0.04);
+  --rf-surface-secondary:
+    rgba(255,255,255,0.06);
+
+  /* BORDERS */
+  --rf-border-primary:
+    rgba(255,255,255,0.08);
+  --rf-border-secondary:
+    rgba(255,255,255,0.14);
+
+  /* TEXT */
+  --rf-text-primary:
+    rgba(255,255,255,0.92);
+  --rf-text-secondary:
+    rgba(255,255,255,0.72);
+  --rf-text-muted:
+    rgba(255,255,255,0.52);
+
+  /* BRAND */
+  --rf-primary:
+    #63d3a1;
+  --rf-highlight:
+    #e2f81b;
+
+  /* LINKS */
+  --rf-link:
+    #63d3a1;
+  --rf-link-hover:
+    #e2f81b;
+
+  /* BOTTOM BAR */
+  --rf-bottom-text:
+    rgba(255,255,255,0.72);
+  --rf-bottom-border:
+    rgba(255,255,255,0.10);
+
+  /* TABLES */
+  --rf-table-bg:
+    rgba(255,255,255,0.03);
+  --rf-table-border:
+    rgba(255,255,255,0.08);
+  --rf-table-head-bg:
+    rgba(23,175,109,0.448);
+  --rf-table-th:
+    rgba(255,255,255,0.92);
+  --rf-table-td:
+    rgba(255,255,255,0.72);
+
+  /* MISC */
+  --rf-radius:
+    28px;
+  --rf-shadow:
+    0 20px 60px rgba(0,0,0,0.35);
+  --slidev-theme-primary:
+    var(--rf-primary);
+}
+
+/* ════════════════════════════════════════════
+   DESIGN TOKENS — LIGHT MODE
+════════════════════════════════════════════ */
+html.light {
+  /* BACKGROUND */
+  --rf-bg:
+    #f5f7fa;
+  --rf-glow:
+    rgba(53,153,110,0.12);
+
+  /* SURFACES */
+  --rf-surface-primary:
+    rgba(255,255,255,0.72);
+  --rf-surface-secondary:
+    rgba(255,255,255,0.92);
+
+  /* BORDERS */
+  --rf-border-primary:
+    rgba(15,23,42,0.08);
+  --rf-border-secondary:
+    rgba(15,23,42,0.14);
+
+  /* TEXT */
+  --rf-text-primary:
+    #111827;
+  --rf-text-secondary:
+    rgba(17,24,39,0.72);
+  --rf-text-muted:
+    rgba(17,24,39,0.52);
+
+  /* BRAND */
+  --rf-primary:
+    #2f8d65;
+  --rf-highlight:
+    #1f6e50;
+
+  /* LINKS */
+  --rf-link:
+    #2f8d65;
+  --rf-link-hover:
+    #1f6e50;
+
+  /* BOTTOM BAR */
+  --rf-bottom-text:
+    rgba(17,24,39,0.72);
+  --rf-bottom-border:
+    rgba(15,23,42,0.12);
+
+  /* TABLES */
+  --rf-table-bg:
+    rgba(160,163,161,0.203);
+  --rf-table-border:
+    rgba(15,23,42,0.08);
+  --rf-table-head-bg:
+    rgba(43,139,97,0.559);
+  --rf-table-th:
+    #111827;
+  --rf-table-td:
+    rgba(17,24,39,0.72);
+}
+
+/* ════════════════════════════════════════════
+   GLOBAL
+════════════════════════════════════════════ */
+html,
+body,
+#slidev {
+  background:
+    var(--rf-bg);
+  color:
+    var(--rf-text-primary);
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+}
+.slidev-layout {
+  max-width:
+    100% !important;
+  background: transparent !important;
+}
+
+/* Container dos efeitos ambientes (dentro do layout) */
+.rf-ambient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* Wrapper do conteúdo acima do ambient */
+.rf-slide-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+/* Orbs pulsantes */
+.rf-ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: rf-pulse-glow 7s ease-in-out infinite alternate;
+}
+.rf-ambient-orb-l {
+  left: -10%;
+  top: 5%;
+  width: 50%;
+  height: 85%;
+  background: radial-gradient(circle, rgba(53,153,110,0.4) 0%, transparent 70%) !important;
+}
+.rf-ambient-orb-r {
+  right: -8%;
+  bottom: 2%;
+  width: 50%;
+  height: 85%;
+  background: radial-gradient(circle, rgba(53,153,110,0.3) 0%, transparent 70%) !important;
+  animation-delay: 2.5s;
+  animation-duration: 8s;
+}
+
+/* Grid de linhas finas */
+.rf-ambient-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px) !important;
+  background-size: 48px 48px;
+}
+
+/* Vignette nas bordas */
+.rf-ambient-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(5,10,20,0.7) 100%) !important;
+}
+
+/* Capa — orbs intensos */
+.slidev-page-1 .rf-ambient-orb-l {
+  left: -15%;
+  width: 65%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(53,153,110,0.8) 0%, transparent 70%) !important;
+  animation-duration: 4s;
+}
+.slidev-page-1 .rf-ambient-orb-r {
+  right: -12%;
+  width: 65%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(53,153,110,0.7) 0%, transparent 70%) !important;
+  animation-duration: 5s;
+}
+
+@keyframes rf-pulse-glow {
+  0%   { opacity: 0.6;  }
+  50%  { opacity: 1;    }
+  100% { opacity: 0.7;  }
+}
+
+/* ════════════════════════════════════════════
+   TYPOGRAPHY
+════════════════════════════════════════════ */
+h1 {
+  font-size:
+    clamp(2.8rem, 7vw, 5rem);
+  line-height:
+    1.0;
+  letter-spacing:
+    -0.05em;
+  font-weight:
+    700;
+  margin-bottom:
+    1rem;
+}
+h2 {
+  font-size:
+    clamp(1.8rem, 4vw, 3rem);
+  letter-spacing:
+    -0.04em;
+  margin-bottom:
+    1rem;
+}
+.slidev-layout h1 {
+  color:
+    var(--rf-primary) !important;
+}
+p,
+li {
+  color:
+    var(--rf-text-secondary) !important;
+  line-height:
+    1.8;
+  font-size:
+    1.05rem;
+  text-shadow:
+    none !important;
+}
+
+.slidev-layout {
+  color:
+    var(--rf-text-secondary) !important;
+}
+
+/* Disable Seriph lead paragraph */
+.slidev-layout h1 + p,
+.slidev-layout h2 + p,
+.slidev-layout h3 + p {
+  opacity:
+    1 !important;
+  font-size:
+    inherit !important;
+  font-weight:
+    inherit !important;
+  line-height:
+    inherit !important;
+  max-width:
+    none !important;
+}
+
+/* ════════════════════════════════════════════
+   LINKS
+════════════════════════════════════════════ */
+a,
+a:visited {
+  color:
+    var(--rf-link) !important;
+  text-decoration:
+    none !important;
+  border:
+    none !important;
+  outline:
+    none !important;
+  opacity:
+    1 !important;
+  transition:
+    opacity 0.2s ease,
+    color 0.2s ease;
+}
+a:hover {
+  color:
+    var(--rf-link-hover) !important;
+  opacity:
+    1 !important;
+}
+
+/* ════════════════════════════════════════════
+   BLOCKQUOTE
+════════════════════════════════════════════ */
+blockquote {
+  border-left:
+    3px solid var(--rf-primary);
+  padding-left:
+    1.2rem;
+  color:
+    var(--rf-text-primary);
+  font-size:
+    1.2rem;
+}
+
+/* ════════════════════════════════════════════
+   LISTS
+════════════════════════════════════════════ */
+ul {
+  list-style:
+    disc;
+  padding-left:
+    1.4rem;
+  margin-top:
+    1rem;
+}
+ol {
+  list-style-type:
+    decimal;
+  padding-left:
+    1.4rem;
+  margin-top:
+    1rem;
+}
+li {
+  margin:
+    0.4rem 0;
+}
+
+/* ════════════════════════════════════════════
+   CODE
+════════════════════════════════════════════ */
+pre {
+  background:
+    var(--rf-surface-primary) !important;
+  border:
+    1px solid var(--rf-border-primary);
+  border-radius:
+    22px;
+  padding:
+    1.2rem !important;
+  overflow:
+    hidden;
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.25);
+}
+code {
+  font-family:
+    "JetBrains Mono",
+    monospace;
+}
+
+/* ════════════════════════════════════════════
+   GLASS SURFACES
+════════════════════════════════════════════ */
+.glass {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.05),
+      rgba(255,255,255,0.03)
+    );
+  border:
+    1px solid var(--rf-border-primary);
+  border-radius:
+    var(--rf-radius);
+  backdrop-filter:
+    blur(20px);
+  box-shadow:
+    var(--rf-shadow);
+  padding:
+    2rem;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* ════════════════════════════════════════════
+   TABLES
+════════════════════════════════════════════ */
+.rf-table {
+  width:
+    100%;
+  border-collapse:
+    collapse;
+  overflow:
+    hidden;
+  border-radius:
+    28px;
+  background:
+    var(--rf-table-bg);
+  border:
+    1px solid var(--rf-table-border);
+  backdrop-filter:
+    blur(20px);
+}
+.rf-table thead {
+  background:
+    var(--rf-table-head-bg);
+}
+.rf-table th {
+  padding:
+    14px 22px;
+  text-align:
+    left;
+  font-size:
+    0.78rem;
+  letter-spacing:
+    0.08em;
+  text-transform:
+    uppercase;
+  color:
+    var(--rf-table-th);
+  border-bottom:
+    1px solid var(--rf-table-border);
+}
+.rf-table td {
+  padding:
+    16px 22px;
+  color:
+    var(--rf-table-td);
+  border-bottom:
+    1px solid var(--rf-table-border);
+}
+
+/* ════════════════════════════════════════════
+   CURSOR
+════════════════════════════════════════════ */
+.rf-cursor {
+  display:
+    inline-block;
+  margin-left:
+    0.2rem;
+  color:
+    var(--rf-primary);
+  animation:
+    rf-blink 1s infinite;
+}
+@keyframes rf-blink {
+  50% {
+    opacity:
+      0;
+  }
+}
+
+/* ════════════════════════════════════════════
+   PRINT / PDF EXPORT
+════════════════════════════════════════════ */
+@media print {
+  .glass {
+    backdrop-filter:
+      none;
+    box-shadow:
+      none;
+  }
+  #slidev::before,
+  #slidev::after {
+    display:
+      none;
+  }
+}
+
