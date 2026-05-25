@@ -21,7 +21,7 @@ class: text-left
   <div class="text-xs font-mono tracking-widest mb-4" style="color: var(--rf-primary)">HOUSTON, TX | ABRIL/2026</div>
   <h1 class="text-5xl font-bold leading-tight mb-4" style="color: var(--rf-primary); font-size: 3.2rem">Tendências de IA em O&G<br>O que já temos aqui</h1>
   <p class="text-xl mb-4" style="color: var(--rf-muted)">Disseminação do 11th Annual AI in Oil & Gas Conference</p>
-  <div class="text-base" style="color: var(--rf-secondary)">Ramon Moreno Ferrari | CSDA / UO-ES</div>
+  <div class="text-base" style="color: var(--rf-secondary)">R.M. Ferrari | CSDA / UO-ES</div>
 </div>
 <div class="absolute bottom-6 right-20">
   <span class="font-mono text-xs tracking-widest font-bold" style="color: var(--rf-primary)">PETROBRAS</span>
@@ -153,7 +153,7 @@ transition: fade
 
 <div class="glass mt-1" style="text-align: center;">
   <p style="font-size: 0.88rem; font-style: italic; color: var(--rf-text); line-height: 1.3;">
-    "Defina o entregável concreto antes de construir qualquer modelo." -- Lesley Ward, Novanix AI
+    "Defina o entregável concreto antes de construir qualquer modelo."
   </p>
   <p style="font-size: 0.68rem; margin-top: 0.2rem; font-family: 'JetBrains Mono', monospace; color: var(--rf-muted)">— Lesley Ward, Novanix AI</p>
 </div>
@@ -218,12 +218,12 @@ flowchart LR
   <p style="font-size: 1.05rem; line-height: 1.5; font-style: italic; color: var(--rf-text)">
     "A IA amplifica tanto boas decisões quanto erros."
   </p>
-  <p style="font-size: 0.7rem; margin-top: 0.2rem; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.12em; color: var(--rf-muted)">— Syniti, AI in Oil & Gas 2026</p>
+  <p style="font-size: 0.7rem; margin-top: 0.2rem; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.12em; color: var(--rf-muted)">— Syniti</p>
 </div>
 
 <div class="grid grid-cols-3 gap-3 mt-3">
   <GlassCard title="Dados incompletos" subtitle="PROBLEMA 1">Incompletos, inconsistentes ou sem contexto operacional</GlassCard>
-  <GlassCard title="Sistemas desconectados" subtitle="PROBLEMA 2">IT, OT e ET que nunca foram pensados para conversar</GlassCard>
+  <GlassCard title="Sistemas desconectados" subtitle="PROBLEMA 2">Sistemas que nunca foram pensados para conversar</GlassCard>
   <GlassCard title="Sem governança" subtitle="PROBLEMA 3">Falta de taxonomia, metadados e gestão de qualidade</GlassCard>
 </div>
 
@@ -448,7 +448,7 @@ flowchart LR
 
 <div style="margin-top: 3rem;">
 
-<GlassCard title="Cases Reais — Covestro" subtitle="DETECÇÃO PRECOCE">
+<GlassCard title="" subtitle="DETECÇÃO PRECOCE: Cases da Covestro">
 
 **Válvula lenta:** atuador 3× mais devagar → troca proativa
 
@@ -504,21 +504,15 @@ Digital twin sem workflow de resposta não gera valor. Tecnologia + processo faz
 </div>
 
 <div>
-<div class="rf-metrics-3 mb-3" style="gap: 1.2rem; display: flex; transform: scale(0.5); transform-origin: top left; margin-bottom: -4rem;">
-  <MetricCard value="45" label="missões" />
-  <MetricCard value="650" label="inspeções IA" />
-  <MetricCard value="36" label="anomalias" />
-</div>
 
 <GlassCard title="" subtitle="VISÃO COMPUTACIONAL: Capacidades">
 
 - Anomalia térmica e infravermelha
-- Detecção de trincas e corrosão
+- Detecção de trincas, corrosão, fumaça, fogo e intrusões
 - Leitura automática de manômetros
-- Detecção de fumaça, fogo e intrusões
-
 </GlassCard>
 </div>
+
 
 </div>
 
@@ -617,15 +611,6 @@ transition: fade
 
 # IA Generativa: RAG e Dados Corporativos
 
-```mermaid
-flowchart LR
-  Q([❓ Pergunta]) --> R[Busca nas fontes internas]
-  R --> C[Contexto + LLM]
-  C --> A([✅ Resposta rastreável])
-  style Q fill:#1e3a5f,color:#fff,stroke:#35996e
-  style A fill:#35996e,color:#fff,stroke:#35996e
-```
-
 <div class="grid grid-cols-3 gap-3 mt-0">
   <GlassCard title="" subtitle="🔐 PILAR 1: Segurança">Controle de acesso granular — dados no perímetro corporativo</GlassCard>
   <GlassCard title="" subtitle="📊 PILAR 2: DQ">Metadados e conectores definem se o RAG responde certo</GlassCard>
@@ -645,6 +630,15 @@ flowchart LR
   </div>
 </Callout>
 </div>
+
+```mermaid
+flowchart LR
+  Q([❓ Pergunta]) --> R[Busca nas fontes internas]
+  R --> C[Contexto + LLM]
+  C --> A([✅ Resposta rastreável])
+  style Q fill:#1e3a5f,color:#fff,stroke:#35996e
+  style A fill:#35996e,color:#fff,stroke:#35996e
+```
 
 <style>
 .slidev-page-16 .rf-architecture { padding: 0.65rem 1.25rem !important; }
@@ -750,8 +744,8 @@ hideInToc: true
   <img src="./slide19.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; margin: 0; padding: 0;" />
   <div style="position: absolute; inset: 0; background: rgba(5,15,30,0.80); margin: 0; padding: 0;"></div>
   <div class="relative z-10 px-16">
-    <div class="text-xs font-mono tracking-widest mb-4" style="color: var(--rf-primary)">CONEXÃO COM O ESPÍRITO SANTO</div>
-    <h1 class="font-bold text-white" style="font-size: 2.8rem; line-height: 1.3;">E o que estamos fazendo<br>no Espírito Santo?</h1>
+    <div class="text-xs font-mono tracking-widest mb-4" style="color: var(--rf-primary)">CONEXÃO COM A PETROBRAS</div>
+    <h1 class="font-bold text-white" style="font-size: 2.8rem; line-height: 1.3;">E o que já estamos fazendo na ES?</h1>
   </div>
 </div>
 
@@ -763,6 +757,51 @@ hideInToc: true
 "Tudo que acabei de mostrar não está distante da nossa realidade. Muito do que vimos em Houston, já estamos construindo aqui — com nossos próprio percurso, mas ainda na mesma direção. Deixa eu mostrar o Hub de Dados e IA do Espírito Santo."
 -->
 
+---
+
+
+<!-- Slide 24 — Conexão Houston ↔ ES -->
+
+# Conexão Houston ↔ ES
+
+<GlassCard title="" subtitle="🟢 ESPÍRITO SANTO" style="padding: 0.5rem 0.9rem !important;">
+
+<div style="font-size: 0.9rem; line-height: 1.4;">
+
+| <span style="color: #35996e; font-weight: 700;">Tendência</span> | <span style="color: #35996e; font-weight: 700;">Nossa solução</span> |
+|-----------|---------------|
+| Digital Twins, alertas preditivos | Ativo360, DIO |
+| RAG corporativo com dados internos | ChatPetrobras / Farol |
+| IA generativa em processos | Soluções Locais |
+| Diagnóstico assistido por IA | Soluções Locais |
+| Cultura de dados e letramento | ES+Digital |
+
+</div>
+
+</GlassCard>
+
+
+<style>
+.slidev-page-24 .glass { padding: 0.5rem 0.9rem !important; }
+.slidev-page-24 .rf-card-title { font-size: 0.9rem !important; margin-bottom: 0.3rem !important; }
+.slidev-page-24 .rf-card-subtitle { margin-bottom: 0.3rem !important; font-size: 0.95rem !important; }
+.slidev-page-24 td { padding: 0.25rem 0.5rem !important; font-size: 0.74rem !important; }
+.slidev-page-24 th { padding: 0.25rem 0.5rem !important; font-size: 0.74rem !important; color: #35996e !important; font-weight: 700 !important; }
+.slidev-page-24 p, .slidev-page-24 li { font-size: 0.77rem !important; line-height: 1.3 !important; }
+
+.slidev-page-31 .glass { padding: 0.5rem 0.9rem !important; }
+.slidev-page-31 .rf-card-subtitle { margin-bottom: 0.3rem !important; font-size: 0.95rem !important; }
+.slidev-page-31 td { padding: 0.25rem 0.5rem !important; font-size: 0.74rem !important; }
+.slidev-page-31 th { padding: 0.25rem 0.5rem !important; font-size: 0.74rem !important; color: #35996e !important; font-weight: 700 !important; }
+.slidev-page-31 p, .slidev-page-31 li { font-size: 0.77rem !important; line-height: 1.3 !important; }
+</style>
+
+<!--
+"O que me marcou no evento não foi a distância entre o que eles fazem e o que fazemos — foi a proximidade. Estamos nos mesmos desafios, com maturidade crescente em várias frentes. O que eles têm a mais é escala. E é exatamente isso que estamos construindo."
+-->
+
+---
+transition: fade
 ---
 
 <!-- Slide 22 — Hub de Dados e IA do ES -->
@@ -863,50 +902,6 @@ E, conectando com o que vimos em Houston: não estamos só experimentando — es
 
 ---
 
-<!-- Slide 24 — Conexão Houston ↔ ES -->
-
-# Conexão Houston ↔ ES
-
-<GlassCard title="" subtitle="🟢 ESPÍRITO SANTO" style="padding: 0.5rem 0.9rem !important;">
-
-<div style="font-size: 0.9rem; line-height: 1.4;">
-
-| <span style="color: #35996e; font-weight: 700;">Tendência</span> | <span style="color: #35996e; font-weight: 700;">Nossa solução</span> |
-|-----------|---------------|
-| Digital Twins, alertas preditivos | Ativo360 |
-| RAG corporativo com dados internos | ChatPetrobras / Farol |
-| IA generativa em processos | Soluções Locais |
-| Diagnóstico assistido por IA | Soluções Locais |
-| Cultura de dados e letramento | ES+Digital |
-
-</div>
-
-</GlassCard>
-
-
-<style>
-.slidev-page-24 .glass { padding: 0.5rem 0.9rem !important; }
-.slidev-page-24 .rf-card-title { font-size: 0.9rem !important; margin-bottom: 0.3rem !important; }
-.slidev-page-24 .rf-card-subtitle { margin-bottom: 0.3rem !important; font-size: 0.95rem !important; }
-.slidev-page-24 td { padding: 0.25rem 0.5rem !important; font-size: 0.74rem !important; }
-.slidev-page-24 th { padding: 0.25rem 0.5rem !important; font-size: 0.74rem !important; color: #35996e !important; font-weight: 700 !important; }
-.slidev-page-24 p, .slidev-page-24 li { font-size: 0.77rem !important; line-height: 1.3 !important; }
-
-.slidev-page-31 .glass { padding: 0.5rem 0.9rem !important; }
-.slidev-page-31 .rf-card-subtitle { margin-bottom: 0.3rem !important; font-size: 0.95rem !important; }
-.slidev-page-31 td { padding: 0.25rem 0.5rem !important; font-size: 0.74rem !important; }
-.slidev-page-31 th { padding: 0.25rem 0.5rem !important; font-size: 0.74rem !important; color: #35996e !important; font-weight: 700 !important; }
-.slidev-page-31 p, .slidev-page-31 li { font-size: 0.77rem !important; line-height: 1.3 !important; }
-</style>
-
-<!--
-"O que me marcou no evento não foi a distância entre o que eles fazem e o que fazemos — foi a proximidade. Estamos nos mesmos desafios, com maturidade crescente em várias frentes. O que eles têm a mais é escala. E é exatamente isso que estamos construindo."
--->
-
----
-transition: fade
----
-
 <!-- Slide 25 — Mensagem Final -->
 
 <div class="absolute inset-0 flex flex-col items-center justify-center px-16">
@@ -915,16 +910,13 @@ transition: fade
 
 <div style="width: 100%; max-width: 760px; display: flex; flex-direction: column; gap: 0.6rem;">
   <div class="glass" style="display: flex; align-items: flex-start; gap: 1rem;">
-    <span style="font-size: 1.2rem; font-weight: 700; margin-top: 0.1rem; color: var(--rf-primary); flex-shrink: 0">1</span>
-    <p style="font-size: 1.05rem; font-weight: 600; color: white; line-height: 1.4; margin: 0">A IA já funciona. O desafio é escalar — e isso é organizacional.</p>
+    <p style="font-size: 1.2rem; font-weight: 700; color: white; line-height: 1.4; margin: 0">(1) A IA já funciona. O desafio é escalar — e isso é organizacional.</p>
   </div>
   <div class="glass" style="display: flex; align-items: flex-start; gap: 1rem;">
-    <span style="font-size: 1.2rem; font-weight: 700; margin-top: 0.1rem; color: var(--rf-primary); flex-shrink: 0">2</span>
-    <p style="font-size: 1.05rem; font-weight: 600; color: white; line-height: 1.4; margin: 0">Dados de qualidade são o alicerce de tudo.</p>
+    <p style="font-size: 1.05rem; font-weight: 600; color: white; line-height: 1.4; margin: 0">(2) Dados de qualidade são o alicerce de tudo.</p>
   </div>
   <div class="glass" style="display: flex; align-items: flex-start; gap: 1rem;">
-    <span style="font-size: 1.2rem; font-weight: 700; margin-top: 0.1rem; color: var(--rf-primary); flex-shrink: 0">3</span>
-    <p style="font-size: 1.05rem; font-weight: 600; color: white; line-height: 1.4; margin: 0">IA generativa está saindo do chatbot e entrando nas operações reais.</p>
+    <p style="font-size: 1.05rem; font-weight: 600; color: white; line-height: 1.4; margin: 0">(3) IA generativa está saindo do chatbot e entrando nas operações reais.</p>
   </div>
 </div>
 
@@ -949,8 +941,8 @@ transition: fade
 <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-16">
   <div class="glass px-16 py-10 w-full max-w-2xl">
     <h1 class="font-bold mb-5" style="font-size: 3.5rem">Obrigado!</h1>
-    <p class="text-lg mb-1" style="color: var(--rf-muted)">Ramon Moreno Ferrari</p>
-    <p class="text-sm font-mono tracking-widest mb-6" style="color: var(--rf-primary)">ES/ENGP — CSDA | UO-ES</p>
+    <p class="text-lg mb-1" style="color: var(--rf-muted)">R. M. Ferrari</p>
+    <p class="text-sm font-mono tracking-widest mb-6" style="color: var(--rf-primary)">ES/ENGP — CSDA</p>
     <div class="glass p-5">
       <p class="text-base italic leading-relaxed">
         Tem um problema no seu processo onde dados ou IA<br>poderiam ajudar? <strong>Procure a CSDA.</strong>
